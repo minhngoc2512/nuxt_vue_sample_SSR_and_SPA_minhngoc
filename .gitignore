@@ -9,3 +9,9 @@ npm-debug.log
 
 # Nuxt generate
 dist
+.package-lock.json
+.idea
+.idea/
+.idea/workspace.xml
+.idea/inspectionProfiles/*
+package-lock.json

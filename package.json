@@ -1,8 +1,8 @@
 {
-  "name": "{{ name }}",
+  "name": "sample_app",
   "version": "1.0.0",
-  "description": "{{ description }}",
-  "author": "{{ author }}",
+  "description": "sample_app_ssr_spa",
+  "author": "Minh Ngoc",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,6 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "isbot": "^2.1.2",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

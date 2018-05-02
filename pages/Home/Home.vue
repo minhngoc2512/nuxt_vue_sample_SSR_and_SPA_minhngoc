@@ -28,6 +28,17 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  name:'home',
+  async asyncData({store,redirect}){
+      
+  },
+  data (){
+    return{
+        name:'Nuxt.js',
+        description:'Sample Project Nuxt.js -  SSR and SPA'
+
+    }
   }
 }
 </script>

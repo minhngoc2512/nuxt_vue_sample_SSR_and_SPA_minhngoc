@@ -1,6 +1,4 @@
-# {{ name }}
-
-> {{ description }}
+Project sample automatic change server render for robot(google,facebook,bing...) or client render for user normal
 
 ## Build Setup
 
@@ -19,4 +17,4 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js) and [Vue.js docs](https://vuejs.org/).
