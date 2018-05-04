@@ -1,7 +1,27 @@
-const config = require("./app/config/index");
+const config_env = require("./app/config/env");
 const router = require("./router/index");
+const config_head = require("./app/config/head");
 const isBot = require("isbot");
+
 module.exports = {
+  /*
+  ** Custom config server to use ENV
+  */
+  env: config_env.env(),
+
+  /*
+  ** Custom config server: ETAG or HTTP2
+  */
+  render: {
+    http2: {
+      push: true
+    },
+    etag: true,
+    static: {
+      etag: true
+    }
+  },
+
   /*
   ** Custom route for page in app
   */
@@ -11,8 +31,9 @@ module.exports = {
       arrayRouter.map(item => routes.push(item));
     }
   },
+
   /*
-  ** Check user-agent
+  ** Check user-agent: auto switch SSR and SPA
   */
   serverMiddleware: [
     {
@@ -25,19 +46,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  head: {
-    title: "Sample Project Nuxt.js -  SSR and SPA",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: "{{escape description }}"
-      }
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
-  },
+  head: config_head.head(),
   /*
   ** Customize the progress bar color
   */
