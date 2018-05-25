@@ -1,4 +1,9 @@
-Project sample automatic change server render for robot(google,facebook,bing...) or client render for user normal
+Project sample automatic change server render SSR for robot(google,facebook,bing...) or client render SPA for user normal
+
+The package installed:
+[Axios](https://github.com/axios/axios),
+[Isbot](https://www.npmjs.com/package/isbot),
+[@nuxtjs/workbox](https://www.npmjs.com/package/@nuxtjs/workbox)
 
 ## Build Setup
 

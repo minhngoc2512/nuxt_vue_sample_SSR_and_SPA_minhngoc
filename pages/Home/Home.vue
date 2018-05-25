@@ -8,13 +8,14 @@
       <h2 class="subtitle">
         {{ description }}
       </h2>
+      <h2 class="subtitle"><a target="_blank" href="https://www.facebook.com/minh.ngoc.779">Customize by MinhNgoc</a></h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
           target="_blank"
           class="button--green">Documentation</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/minhngoc2512/nuxt_vue_sample_SSR_and_SPA_minhngoc"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
@@ -31,12 +32,12 @@ export default {
   },
   name:'home',
   async asyncData({store,redirect}){
-      
+
   },
   data (){
     return{
         name:'Nuxt.js',
-        description:'Sample Project Nuxt.js -  SSR and SPA'
+        description:'Sample Project Nuxt.js -  SSR and SPA '
 
     }
   }
@@ -67,6 +68,10 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+}
+.subtitle a{
+  text-decoration: none;
+  color: #45b883;
 }
 
 .links {

@@ -5,12 +5,17 @@ const isBot = require("isbot");
 
 module.exports = {
   /*
-  ** Custom config server to use ENV
+  ** Customize config server to use ENV
   */
   env: config_env.env(),
-
   /*
-  ** Custom config server: ETAG or HTTP2
+ ** Config cache use Workbox
+ */
+  modules: [
+    '@nuxtjs/pwa',
+  ],
+  /*
+  ** Customize config server: ETAG or HTTP2
   */
   render: {
     http2: {
@@ -23,7 +28,7 @@ module.exports = {
   },
 
   /*
-  ** Custom route for page in app
+  ** Customize route for page
   */
   router: {
     extendRoutes(routes, resolve) {
@@ -33,7 +38,7 @@ module.exports = {
   },
 
   /*
-  ** Check user-agent: auto switch SSR and SPA
+  ** Check user-agent: auto switch SSR or SPA
   */
   serverMiddleware: [
     {
@@ -44,7 +49,7 @@ module.exports = {
     }
   ],
   /*
-  ** Headers of the page
+  ** Head of the page
   */
   head: config_head.head(),
   /*
@@ -68,7 +73,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
+    extend(config, {isDev, isClient}) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: "pre",
