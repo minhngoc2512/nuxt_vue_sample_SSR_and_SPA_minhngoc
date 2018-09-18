@@ -13,6 +13,9 @@ module.exports = {
  */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/component-cache',
+    // With options
+    ['@nuxtjs/component-cache', { maxAge: 1000 * 60 * 60 * 24 }],
   ],
   /*
   ** Customize config server: ETAG or HTTP2
@@ -65,6 +68,12 @@ module.exports = {
     color: "#05ff60",
     background: "white"
   },
+
+//config plugins
+  plugins:[
+    // {src:"~/plugins/axios_cache.js",ssr:true},
+  ],
+
   /*
   ** Build configuration
   */

@@ -1,30 +1,23 @@
-import axios from "axios";
-export class ApiConnect {
-  constructor({ commit, key_action }) {
-    this.commit = commit ? commit : null;
-    this.key_action = key_action ? key_action : null;
-  }
-  async get(url) {
-    console.time(url);
-    await axios
-      .get(url)
-      .then(response => {
-        if (response.data.status != 200) {
-          throw "404";
-        }
-        this.commit(this.key_action, { data: response.data.data });
-        console.timeEnd(url);
-      })
-      .catch(error => {
-        console.log("api error:" + error);
-        throw error;
-      });
-  }
-  setConfigApi() {
-    return {
-      timeout: 30000,
-      responseType: "json",
-      Authorization: "Basic Y2xpZW50OnNlY3JldA=="
-    };
-  }
+import axios from 'axios';
+
+export async function ApiConnect({commit, key_commit, url,redirect,cache}) {
+  console.time(url);
+  await axios
+    .get(url, {
+      cache: typeof cache != "undefined"?true:false
+    })
+    .then(response => {
+      if (response.data.status_code != 200) {
+        throw response.data.message;
+      }
+      commit(key_commit, response.data.data);
+      console.timeEnd(url);
+    })
+    .catch(error => {
+      console.error("api error:" + error + ' , url:' + url);
+      if(typeof redirect != "undefined"){
+        redirect('/error/404')
+      }
+      throw error;
+    });
 }
