@@ -46,6 +46,13 @@ module.exports = {
   serverMiddleware: [
     {
       handler(req, res, next) {
+        var myList = [
+          'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Page Speed Insights) Chrome/27.0.1453 Safari/537.36',
+          'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0_1 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko; Google Page Speed Insights) Version/6.0 Mobile/10A525 Safari/8536.25',
+          '^Google Page Speed Insights/\\d\\.\\d$',
+          '^Google Page Speed/\\d\\.\\d$'
+        ];
+        isBot.extend(myList);
         res.spa = !isBot(req.headers["user-agent"]);
         next();
       }
