@@ -15,7 +15,7 @@
           target="_blank"
           class="button--green">Documentation</a>
         <a
-          href="https://github.com/minhngoc2512/nuxt_vue_sample_SSR_and_SPA_minhngoc"
+          href="https://github.com/minhngoc2512/nuxt_vue_simple_SSR_and_SPA_template_minhngoc"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
@@ -36,8 +36,8 @@ export default {
   },
   data (){
     return{
-        name:'Nuxt.js',
-        description:'Sample Project Nuxt.js -  SSR and SPA '
+        name:'NUXT',
+        description:'Simple Project NuxtJs -  SSR and SPA '
 
     }
   }
