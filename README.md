@@ -1,4 +1,4 @@
-Project sample automatic change server render SSR for robot(google,facebook,bing...) or client render SPA for user normal
+Simple project automatic change server render SSR for robot(google,facebook,bing...) or client render SPA for user normal
 
 The package installed:
 [Axios](https://github.com/axios/axios),
